@@ -1,27 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   deneme_main.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcekici <mcekici@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/24 13:02:35 by mcekici           #+#    #+#             */
+/*   Updated: 2024/12/24 13:02:35 by mcekici          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
-#include <fcntl.h>
 #include <stdio.h>
+#include <fcntl.h>
 #include <stdlib.h>
-
-int	main(void)
+/*
+int main()
 {
-	// int	fd1, fd2;
+	int	fd;
+	fd = open("../deneme.txt", O_RDONLY);
 
-	// fd1 = open("../ornek.txt", O_RDONLY);
-	// fd2 = open("../ornek1.txt", O_RDONLY);
-	// printf("%s", get_next_line(fd1));
-	// printf("%s", get_next_line(fd1));
-	// printf("%s", get_next_line(fd1));
-	// printf("%s", get_next_line(fd2));
-	// printf("%s", get_next_line(fd2));
-	// printf("%s", get_next_line(fd2));
-
-	char	*ptr = (char *)malloc(1);
-	ptr[0] = 'a';
-	ft_realloc(ptr, 2);
-	ptr[1] = 'b';
-	printf("%c\n", ptr[0]);
-	printf("%c\n", ptr[1]);
-	
-
+	for (int i=0; i<5; i++)
+	{
+		char	*str = get_next_line(fd);
+		printf("%s", str);
+		free(str);
+	}
+	return (0);
 }
+*/
