@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char	*ft_get_line(char *str)
+static char	*ft_get_line(char *str)
 {
 	char	*ptr;
 	int		len;
@@ -40,7 +40,7 @@ char	*ft_get_line(char *str)
 	return (ptr);
 }
 
-char	*ft_get_after_line(char	*str)
+static char	*ft_get_after_line(char	*str)
 {
 	char	*ptr;
 	char	*iter_str;
@@ -76,7 +76,7 @@ static char	*ft_read_func(char *str, int fd)
 	while (!ft_strchr(str, '\n') && byte_readed != 0)
 	{
 		byte_readed = read(fd, buffer, BUFFER_SIZE);
-		if (byte_readed == -1)
+		if (byte_readed == -1 || (!byte_readed && !str))
 			return (free(str), free(buffer), NULL);
 		buffer[byte_readed] = '\0';
 		str = ft_strjoin(str, buffer);
